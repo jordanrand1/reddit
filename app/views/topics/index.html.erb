@@ -4,7 +4,9 @@
   <% @topics.each do |topic| %>
     <li><%= link_to topic.name, [@sub, topic] %></li>
     <ul>
-      <li><%= topic.comments %></li>
+      <% topic.comments.all.each do |comment| %>
+      <li><%= comment.body %></li>
+      <% end %>
     </ul>
   <% end %>
 </ul>
